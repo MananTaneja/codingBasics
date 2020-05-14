@@ -3,7 +3,7 @@
 using namespace std;
 
 
-// Basoc structure of TrieNode 
+// Basic structure of TrieNode 
 struct TrieNode {
     TrieNode *children[26];
     bool endOfWord = false;
