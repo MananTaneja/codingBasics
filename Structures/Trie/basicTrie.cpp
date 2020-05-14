@@ -7,26 +7,26 @@ using namespace std;
 struct TrieNode {
     TrieNode *children[26];
     bool endOfWord = false;
-    // TrieNode() {
-    //     for(int i = 0; i < 26; i++) {
-    //         children[i] = NULL;
-    //     }
-    // }
+    TrieNode() {
+        for(int i = 0; i < 26; i++) {
+            children[i] = NULL;
+        }
+    }
 };
 
 // Makes a new TrieNode with default values and returns it
 
-TrieNode* getNode() {
-    TrieNode *newNode = new TrieNode;
+// TrieNode* getNode() {
+//     TrieNode *newNode = new TrieNode;
 
-    newNode->endOfWord = false;
+//     newNode->endOfWord = false;
 
-    for(int i = 0; i < 26; i++) {
-        newNode->children[i] = NULL;
-    }
+//     for(int i = 0; i < 26; i++) {
+//         newNode->children[i] = NULL;
+//     }
 
-    return newNode;
-}
+//     return newNode;
+// }
 
 
 // Inserting into TrieNode
@@ -41,7 +41,7 @@ void insert(TrieNode* root, string word) {
 
         // Makes and assigns an empty TrieNode if it doesn't already exist
         if(nodeCrawler->children[ind] == NULL) {
-            nodeCrawler->children[ind] = getNode();
+            nodeCrawler->children[ind] = new TrieNode();
         }
 
         nodeCrawler = nodeCrawler->children[ind];
@@ -74,15 +74,15 @@ int main() {
                     "answer", "any", "by", 
                      "bye", "their" }; 
     
-    TrieNode* root = getNode();
+    TrieNode* root = new TrieNode();
 
     for(int i = 0; i < words.size(); i++) {
         insert(root, words[i]);
     }
 
     search(root, "the")?cout<<"the exists":cout<<"the doesnt exist";
-
+    cout << endl;
     search(root, "these")? cout<< "these exists": cout << "these doesnt exist";
-
+    cout << endl;
     return 0;
 }
