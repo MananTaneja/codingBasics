@@ -61,9 +61,14 @@ void mergeSort(vector<int>& arr, int l, int r) {
     if (l < r) {
         int m = l + (r - l)/2;
 
+        // Using the mid point m we divide the array into 2 smaller arrays
         mergeSort(arr, l, m);
         mergeSort(arr, m+1, r);
 
+        // After the splitting into 2 halves has happened recursively, we now, merge them 
+        // merging also happens in recursive way -> think of it as stack 
+        // which means that we first split till we can anymore and each of the split is stored in a stack
+        // now we traverse the stack and for each top we merge
         merge(arr, l, m, r);
     }
 }
