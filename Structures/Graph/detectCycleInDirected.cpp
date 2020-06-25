@@ -11,7 +11,7 @@ void addEdge(vector<int> adj[], int u, int v) {
 
 int main() {
 
-    int N = 6;
+    int N = 4;
     vector<int> adj[N];
     addEdge(0, 1); 
     addEdge(0, 2); 
