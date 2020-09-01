@@ -1,9 +1,11 @@
 # Basic Coding Exercises for Interview Preparation!
 
 ## Required Data Structures
- - Linked Lists
- - Arrays
- - Strings
- - Tree
- - Trie
- - Graphs
+
+- Linked Lists
+- Arrays (Vectors)
+- Strings
+- Tree
+- Trie
+- Graphs
+- Maps and Sets
