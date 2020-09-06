@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "iostream": "cpp",
-    "cstdio": "cpp"
+    "cstdio": "cpp",
+    "bitset": "cpp"
   },
   "python.pythonPath": "/usr/bin/python3"
 }
