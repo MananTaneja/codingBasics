@@ -21,10 +21,10 @@ int minDistance(vector<int> &dist, vector<bool> &present)
 
 void printSol(vector<int> &dist)
 {
-    cout << "Vertex \t\t Distance from src" << endl;
+    cout << "Vertex: Distance from src" << endl;
     for (int i = 0; i < V; i++)
     {
-        cout << i << "\t\t" << dist[i];
+        cout << i << ": " << dist[i] << endl;
     }
     return;
 }
@@ -62,5 +62,6 @@ int main()
                        {0, 0, 2, 0, 0, 0, 6, 7, 0}};
 
     djikstra(graph, 0);
+    cout << endl;
     return 0;
 }
