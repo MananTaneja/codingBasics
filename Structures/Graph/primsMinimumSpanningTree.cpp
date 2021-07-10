@@ -33,6 +33,12 @@ int main() {
     adj[3] = {{4, 9}, {0, 1}, {1, 3}, {2, 5}};
     adj[4] = {{0, 4}, {3, 9}};
     adj[5] = {{2, 8}, {1, 7}};
+
+    // adj[0] = {{1, 2}, {3, 6}};
+    // adj[1] = {{0, 2}, {2, 3}, {3, 8}, {4, 5}};
+    // adj[2] = {{1, 3}, {4, 7}};
+    // adj[3] = {{0, 6}, {1, 8}, {4, 9}};
+    // adj[4] = {{1, 5}, {2, 7}, {3, 9}};
     
     int start = 0;
     vector<bool> visited(N, false);
@@ -49,6 +55,7 @@ int main() {
             cout << "PickNext Fails" << endl;
             return -1;
         }
+        cout << u << " ";
         visited[u] = true;
         for(auto p: adj[u]) {
             int v = p.first;
@@ -56,16 +63,17 @@ int main() {
 
             if(!visited[v] && dist[v] > dist[u] + w) {
                 parent[v] = u;
-                dist[v] = dist[u] + w;
+                dist[v] = w;
             }
         }
     }
-    
+    cout << endl;
     int totalWeight = 0;
     for(int n: dist) {
+        cout << n << " ";
         totalWeight += n;
     }
-
+    cout << endl;
     cout << totalWeight << endl;
 
     return 0;
