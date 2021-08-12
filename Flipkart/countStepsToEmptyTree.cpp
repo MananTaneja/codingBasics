@@ -5,16 +5,17 @@ using namespace std;
 
 // Structure of a
 // Binary Tree Node
-struct TreeNode {
+struct TreeNode
+{
 	int val;
 	TreeNode *left, *right;
 };
 
 // Function to allocate
 // a new tree node
-TreeNode* newNode(int val)
+TreeNode *newNode(int val)
 {
-	TreeNode* node = new Node;
+	TreeNode *node = new TreeNode;
 	node->val = val;
 	node->left = NULL;
 	node->right = NULL;
@@ -26,23 +27,21 @@ TreeNode* newNode(int val)
 // from leaf in the subtree rooted at
 // current node and add that to hashmap
 int maxHeightToLeafUTIL(
-	TreeNode* curr, map<int, vector<int> >& mp)
+	TreeNode *curr, map<int, vector<int>> &mp)
 {
-	if (curr == NULL) {
+	if (curr == NULL)
+	{
 		return 0;
 	}
 
 	// Max height to leaf in left subtree
-	int leftLeaf
-		= maxHeightToLeafUTIL(curr->left, mp);
+	int leftLeaf = maxHeightToLeafUTIL(curr->left, mp);
 
 	// Max height to leaf in right subtree
-	int rightLeaf
-		= maxHeightToLeafUTIL(curr->right, mp);
+	int rightLeaf = maxHeightToLeafUTIL(curr->right, mp);
 
 	// Max height to leaf in current subtree
-	int maxHeightSubtree
-		= 1 + max(leftLeaf, rightLeaf);
+	int maxHeightSubtree = 1 + max(leftLeaf, rightLeaf);
 
 	// Adding current node to the Map
 	mp[maxHeightSubtree].push_back(
@@ -54,12 +53,11 @@ int maxHeightToLeafUTIL(
 // Function to find the count of leaf nodes
 // by repeatedly removing the leaf nodes
 
-
 // Driver code
 int main()
 {
 	// Given Binary Tree
-	TreeNode* root = newNode(2);
+	TreeNode *root = newNode(2);
 	root->right = newNode(7);
 	root->right->right = newNode(6);
 	root->left = newNode(5);
